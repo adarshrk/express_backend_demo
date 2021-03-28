@@ -1,0 +1,25 @@
+{
+    "device": {
+        "type": "String",
+        "required": true
+    },
+    "os": {
+        "type": "String",
+        "required": true
+    },
+    "manufacturer": {
+        "type": "String",
+        "required": true
+    },
+    "is_checked_out": {
+        "type": "Boolean",
+        "required": true,
+        "default": false
+    },
+    "last_checked_out_by": {
+        "type": "String"
+    },
+    "last_checked_date": {
+        "type": "Date"
+    }
+}

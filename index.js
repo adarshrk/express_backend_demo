@@ -5,16 +5,20 @@ const cors = require('cors');
 
 const config = require('./config/default.json');
 const routes = require('./routes/index');
+const { getMongoConnection } = require('./helpers/getDbConnection');
 
 const app = express();
 
 app.use(cors());
 app.options('*', cors());
+
 app.use(helmet());
 app.use(morgan('combined'));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use(getMongoConnection);
 
 app.use('/', routes);
 
